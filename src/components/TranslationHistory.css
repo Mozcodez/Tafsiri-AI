@@ -1,0 +1,129 @@
+/* ─────────────────────────────────────────────────────
+   TranslationHistory.css
+───────────────────────────────────────────────────── */
+
+.th-section { margin-top: 3rem; }
+
+/* ── Section label ── */
+.th-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.th-label-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Line after label text */
+.th-label-left::after {
+  content: '';
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background: var(--border);
+}
+
+.th-count-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  background: var(--bg3);
+  color: var(--ink3);
+  padding: 1px 6px;
+  border-radius: 2px;
+}
+
+/* ── Clear button ── */
+.th-clear-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.th-clear-btn:hover { color: var(--danger); }
+
+/* ── Grid ── */
+.th-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  border: 1px solid var(--border);
+  gap: 1px;
+  background: var(--border);
+}
+
+/* ── Individual item ── */
+.th-item {
+  background: var(--bg);
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  animation: histFadeIn 0.3s ease forwards;
+  opacity: 0;
+}
+
+.th-item:hover { background: var(--bg2); }
+
+@keyframes histFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Item parts ── */
+.th-item-langs {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.th-item-time {
+  font-size: 0.55rem;
+}
+
+.th-item-source {
+  font-size: 0.85rem;
+  color: var(--ink2);
+  line-height: 1.5;
+  margin-bottom: 0.3rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.th-item-translation {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.4;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .th-grid { grid-template-columns: 1fr; }
+}

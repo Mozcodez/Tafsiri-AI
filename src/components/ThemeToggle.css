@@ -1,0 +1,20 @@
+/* ─────────────────────────────────────────────────────
+   ThemeToggle.css
+───────────────────────────────────────────────────── */
+
+.tt-btn {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink2);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.tt-btn:hover { background: var(--bg3); color: var(--ink); border-color: var(--ink3); }

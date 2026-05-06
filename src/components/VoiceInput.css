@@ -1,0 +1,39 @@
+/* ─────────────────────────────────────────────────────
+   VoiceInput.css
+───────────────────────────────────────────────────── */
+
+.vi-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink2);
+  transition: background 0.15s, color 0.15s, border-color 0.15s, transform 0.1s;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.vi-btn:hover  { background: var(--bg3); color: var(--ink); border-color: var(--ink3); }
+.vi-btn:active { transform: scale(0.93); }
+
+/* Active / recording state */
+.vi-btn--active {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+/* Pulsing ring when mic is on */
+.vi-btn--active::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border: 1.5px solid var(--ink);
+  border-radius: 4px;
+  animation: micPulse 1s ease-in-out infinite;
+}

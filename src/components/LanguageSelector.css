@@ -1,0 +1,79 @@
+/* ─────────────────────────────────────────────────────
+   LanguageSelector.css
+───────────────────────────────────────────────────── */
+
+.ls-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1rem;
+}
+
+.ls-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  flex-shrink: 0;
+}
+
+/* ── Auto-detect badge ── */
+.ls-auto-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 2px 7px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+.ls-auto-badge--on {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+.ls-auto-badge--off {
+  background: var(--bg3);
+  color: var(--ink3);
+  border-color: var(--border);
+}
+
+.ls-auto-badge--off:hover {
+  color: var(--ink);
+  border-color: var(--ink3);
+}
+
+/* ── Select dropdown ── */
+.ls-select {
+  background: transparent;
+  border: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-right: 1.2rem;
+  max-width: 160px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 10px;
+}
+
+.ls-select option {
+  background: var(--bg);
+  color: var(--ink);
+  font-weight: 400;
+  text-transform: none;
+}

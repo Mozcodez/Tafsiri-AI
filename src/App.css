@@ -1,0 +1,259 @@
+/* ─────────────────────────────────────────────────────
+   App.css  —  Header, Hero, Footer, Toast, Layout
+───────────────────────────────────────────────────── */
+
+/* ── Header ── */
+.app-header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+
+.app-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.app-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.app-logo-wordmark {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.45rem;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  font-style: italic;
+}
+
+.app-logo-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 2px 7px;
+  border-radius: 2px;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.app-nav-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.app-nav-link:hover { color: var(--ink); }
+
+/* ── Hero ── */
+.app-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: end;
+  gap: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.app-hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.63rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 1rem;
+}
+
+.app-hero-headline {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.93;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+
+.app-hero-desc {
+  color: var(--ink2);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 380px;
+  margin-bottom: 2rem;
+}
+
+.app-hero-stats {
+  display: flex;
+  gap: 2rem;
+}
+
+.app-stat {
+  border-left: 2px solid var(--ink);
+  padding-left: 1rem;
+}
+
+.app-stat-num {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.app-stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-top: 4px;
+}
+
+/* ── Main content area ── */
+.app-main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+}
+
+/* ── Browser warning ── */
+.app-browser-warn {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--ink3);
+  padding: 0.7rem 1rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink3);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Footer ── */
+.app-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.app-footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--ink3);
+  letter-spacing: 0.06em;
+}
+
+.app-footer-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.app-footer-link {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--ink3);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.15s;
+}
+
+.app-footer-link:hover { color: var(--ink); }
+
+/* ── Toast ── */
+.app-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 1.4rem;
+  border-radius: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+.app-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .app-header  { padding: 0 1.25rem; }
+  .app-hero    { padding: 3rem 1.25rem 2rem; }
+  .app-main    { padding: 2rem 1.25rem; }
+  .app-nav-link { display: none; }
+  .app-footer  { flex-direction: column; align-items: flex-start;  text-align: center; }
+  .app-hero-stats { gap: 1.25rem; }
+}
+
+/* ── Active nav link ── */
+.app-nav-link--active {
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 1px;
+}
+
+  .app-hamburger { display: flex; }
+
+  .app-mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    z-index: 99;
+  }
+
+  .app-mobile-menu .app-nav-link {
+    display: block;
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .app-mobile-menu .app-nav-link:last-of-type {
+    border-bottom: none;
+  }
+

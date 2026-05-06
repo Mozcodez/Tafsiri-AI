@@ -1,0 +1,59 @@
+/* ─────────────────────────────────────────────────────
+   index.css  —  Global base only
+   Component styles live in their own .css files
+───────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ── */
+:root {
+  --bg:          #ffffff;
+  --bg2:         #f6f6f4;
+  --bg3:         #ebebeb;
+  --ink:         #0c0c0b;
+  --ink2:        #444440;
+  --ink3:        #888880;
+  --border:      #d8d8d4;
+  --border-bold: #0c0c0b;
+  --danger:      #b93232;
+  --success:     #1f7a50;
+  --warn-col:    #a06020;
+}
+
+.dark {
+  --bg:          #0c0c0b;
+  --bg2:         #161614;
+  --bg3:         #222220;
+  --ink:         #f0f0ec;
+  --ink2:        #b8b8b0;
+  --ink3:        #686864;
+  --border:      #303030;
+  --border-bold: #f0f0ec;
+}
+
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Syne', sans-serif;
+  transition: background 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: var(--bg2); }
+::-webkit-scrollbar-thumb  { background: var(--border); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink3); }
+
+/* ── Shared keyframes (used across multiple components) ── */
+@keyframes micPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0; transform: scale(1.4); }
+}
