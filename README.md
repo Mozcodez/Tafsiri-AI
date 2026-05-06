@@ -1,6 +1,6 @@
-# LinguaAI — AI-Powered Language Translator
+# Tafsiri AI -Language Translator
 
-A fully functional, portfolio-ready React translation app. Zero backend, zero cost.
+A fully functional React translation app.
 
 ## Tech Stack
 | Layer | Technology |
@@ -35,10 +35,7 @@ npm run preview   # preview production build
 - Ctrl+Enter keyboard shortcut
 - Firefox graceful degradation
 
-## Deploy to Vercel
-```bash
-npm i -g vercel && vercel
-```
+
 
 ## Deploy to Netlify
 ```bash
